@@ -28,4 +28,4 @@ def index(request):
     try:
         return response
     except Exception as e:
-        return HttpResponse(str(e))
+        return HttpResponse("good")
