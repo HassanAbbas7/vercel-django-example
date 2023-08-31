@@ -14,7 +14,7 @@ def index(request):
     
     # filters out all the files with "mp4" extension
     stream = yt.streams.get_highest_resolution()
-    stream.download("./")
+    stream.download("/tmp/")
     
     #to set the name of the file
     
