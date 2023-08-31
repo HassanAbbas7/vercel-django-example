@@ -2,6 +2,8 @@ from datetime import datetime
 from pytube import YouTube
 from django.http import HttpResponse
 import glob
+from rest_framework.response import Response
+
 
 def index(request):
     link="https://www.youtube.com/watch?v=xWOoBJUqlbI"
@@ -23,7 +25,7 @@ def index(request):
         response = HttpResponse(video_data, content_type="video/mp4")
         response["Content-Disposition"] = f"attachment; filename='myfile.mp4'"
         #to set the name of the file
-        return response
+        return Response(video_data)
     except Exception as e:
         print(e)
         return HttpResponse("error")
