@@ -3,8 +3,11 @@ from pytube import YouTube
 from django.http import HttpResponse
 import glob
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 
+
+@api_view(('GET',))
 def index(request):
     link="https://www.youtube.com/watch?v=xWOoBJUqlbI"
     try:
