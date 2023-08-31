@@ -23,7 +23,7 @@ def index(request):
         response = HttpResponse(video_data, content_type="video/mp4")
         response["Content-Disposition"] = f"attachment; filename='myfile.mp4'"
         #to set the name of the file
-        return HttpResponse("good")
+        return response
     except Exception as e:
         print(e)
         return HttpResponse("error")
